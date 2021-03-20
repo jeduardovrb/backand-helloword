@@ -22,13 +22,13 @@ app.get('/ab[0-9]cd', (req, res) => {
     res.send("Essa é uma expressão regular. ");
 });
 
-let params_module = require('./params.js');
-
-app.use('/', params_module);
-
 app.get('/sobre', (req, res) => {
     res.send("<h1>Você está em uma página sobre.</h1><br>aqui é paragrafo.</br>");
 });
+
+let params_module = require('./params.js');
+
+app.use('/', params_module);
 
 app.post('/json', (req, res) => {
     res.status(200).json({usuario: "Jorge", id: 1});
